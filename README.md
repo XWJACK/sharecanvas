@@ -125,7 +125,7 @@ Page({
            "lineHeight": 22,
            "color": "#707070",
 
-           "isDraw": True,
+           "isDraw": true,
        },
        {
            "type": 1,
@@ -140,7 +140,7 @@ Page({
            "breakMode": "wrap",
            "lineHeight": 12,
 
-           "isDraw": True,
+           "isDraw": true,
        },
     	  {
            "type": 1,
@@ -157,7 +157,7 @@ Page({
            "lineHeight": 12,
            "maxLineNumber": 1,
 
-           "isDraw": True,
+           "isDraw": true,
        },
        {
            "type": 1,
