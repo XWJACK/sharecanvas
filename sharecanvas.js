@@ -29,10 +29,10 @@ Component({
       value: {layers: []},
       observer (newVal, oldVal) {
         if (!this.isPainting) {
-          if (newVal && newVal.canvas.width && newVal.canvas.height) {
+          if (newVal && newVal.canvas.parameters.width && newVal.canvas.parameters.height) {
             this.setData({
-              width: this.data.config.canvas.width,
-              height: this.data.config.canvas.height,
+              width: newVal.canvas.parameters.width,
+              height: newVal.canvas.parameters.height,
             })
             this.isPainting = true
             this.readyPainting()
@@ -182,7 +182,8 @@ Component({
     drawImage (params) {
       console.log('ShareCanvas draw image with params:', params)
       this.ctx.save()
-      const { url, top = 0, left = 0, width = 0, height = 0 } = params
+      const { url } = params
+      const { top = 0, left = 0, width = 0, height = 0 } = params.parameters
       // if (borderRadius) {
       //   this.ctx.beginPath()
       //   this.ctx.arc(left + borderRadius, top + borderRadius, borderRadius, 0, 2 * Math.PI)
@@ -199,7 +200,11 @@ Component({
 
       const {
         content = '',
-        
+        // bolder = false,
+        // textDecoration = 'none'
+      } = params
+      
+      const {
         top = 0,
         left = 0,
         width = 0,
@@ -210,10 +215,8 @@ Component({
         maxLineNumber = 1,
         breakMode = TextBreakMode.none,
         color = 'black',
-        // bolder = false,
-        // textDecoration = 'none'
-      } = params
-      
+      } = params.parameters
+
       // this.ctx.beginPath()
       this.ctx.setTextBaseline('normal')
       this.ctx.setTextAlign(textAlign)
@@ -291,7 +294,7 @@ Component({
     drawRect (params) {
       console.log('ShareCanvas draw rect with params:', params)
       this.ctx.save()
-      const { color, top = 0, left = 0, width = 0, height = 0 } = params
+      const { color, top = 0, left = 0, width = 0, height = 0 } = params.parameters
       this.ctx.setFillStyle(color)
       this.ctx.fillRect(left, top, width, height)
       this.ctx.restore()
