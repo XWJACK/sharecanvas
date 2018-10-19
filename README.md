@@ -54,124 +54,67 @@ Page({
 | maxLineNumber | Number | ✅ | 1 | ⚠️ Only effective for breakMode is `width` <br/> Out of will been display to `"..."` |
 
 
+- Example JSON
 
 ```json
 {
-   "canvas": {
-       "width": 319,
-       "height": 496,
+	"canvas": {
+       "parameters": {
+           "height": 496,
+           "width": 319
+       },
    },
    "layers": [
        {
-           "type": 0,
-           
-				"content": "This is Rect but content not effective.",
-				
-           "top": 0,
-           "left": 0,
-           "width": 319,
-           "height": 496,
-
            "isDraw": true,
-
-           "color": "#FFF",
+           "parameters": {
+               "color": "#FFF",
+               "height": 496,
+               "left": 0,
+               "top": 0,
+               "width": 319
+           },
+           "type": 0
        },
        {
-           "type": 2,
-
-           "content": "/images/main.png",
-
-           "top": 0,
-           "left": 0,
-           "width": 319,
-           "height": 220,
-
+           "content": "https://www.baidu.com/xxx.png",
            "isDraw": true,
-       },
-        {
-           "type": 2,
-
-           "content": "https://path/to/image.png",
-
-           "top": 0,
-           "left": 0,
-           "width": 319,
-           "height": 220,
-
-           "isDraw": true,
+           "parameters": {
+               "height": 220,
+               "left": 0,
+               "top": 0,
+               "width": 319
+           },
+           "type": 2
        },
        {
-           "type": 1,
-           "content": "Image From XWJACK",
-
-           "top": 230,
-           "left": 160,
-
-           "textAlign": "center",
-           "fontSize": 9,
-           "color": "#707070",
-
+           "content": "It's only a matter of time.",
            "isDraw": true,
+           "parameters": {
+               "color": "#373737",
+               "fontSize": 12,
+               "left": 160,
+               "lineHeight": 22,
+               "textAlign": "center",
+               "top": 283
+           },
+           "type": 1
        },
        {
-           "type": 1,
-           "content": "Make by Jack",
-
-           "top": 283,
-           "left": 160,
-
-           "textAlign": "center",
-           "fontSize": 12,
-           "lineHeight": 22,
-           "color": "#707070",
-
+           "content": "---- Jack",
            "isDraw": true,
+           "parameters": {
+               "breakMode": "none",
+               "color": "#373737",
+               "fontSize": 12,
+               "left": 130,
+               "lineHeight": 12,
+               "maxLineNumber": 3,
+               "textAlign": "left",
+               "top": 353
+           },
+           "type": 1
        },
-       {
-           "type": 1,
-           "content": "This is text with break mode wrap.\nThis is new line.",
-
-           "top": 392,
-           "left": 160,
-
-           "textAlign": "center",
-           "fontSize": 10,
-           "color": "#9B9B9B",
-           "breakMode": "wrap",
-           "lineHeight": 12,
-
-           "isDraw": true,
-       },
-    	  {
-           "type": 1,
-           "content": "This is text with break mode width.",
-
-           "top": 392,
-           "left": 160,
-           "width": 100,
-
-           "textAlign": "center",
-           "fontSize": 10,
-           "color": "#9B9B9B",
-           "breakMode": "width",
-           "lineHeight": 12,
-           "maxLineNumber": 1,
-
-           "isDraw": true,
-       },
-       {
-           "type": 1,
-           "content": "This is text with break mode with none",
-
-           "top": 458,
-           "left": 23,
-
-           "textAlign": "left",
-           "fontSize": 10,
-           "color": "#A1A1A1",
-
-           "isDraw": true,
-       }
    ]
 }
 ```
